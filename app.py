@@ -84,4 +84,7 @@ def file_metadata(filename):
     return jsonify(file_metadata)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Read port from environment variable, default to 5000 if not set
+    port = int(os.environ.get('PORT', 5000))
+    # Run the app on all IP addresses (0.0.0.0) and the specified port
+    app.run(host='0.0.0.0', port=port, debug=False)
