@@ -9,28 +9,6 @@ Flask Website is a web application built with Flask that provides a user-friendl
 - File Metadata: Provides file details such as upload date and IP address of the uploader.
 - Folder Navigation: Browse through folders and view their contents.
 
-##File Structure##
-flask-website/
-│
-├── app.py                  # Main application script
-├── requirements.txt        # Python dependencies
-│
-├── templates/              # HTML templates
-│   ├── base.html
-│   ├── index.html
-│   ├── downloads.html
-│   └── upload.html
-│
-├── static/                 # Static files like CSS, JavaScript, and images
-│   ├── css/
-│   │   └── styles.css
-│   └── images/
-│       ├── folder_icon.png
-│       └── file_icon.png
-│
-└── files/                  # Directory for uploaded files
-
-
 ##Installation##
 Follow these steps to set up and run the application:
 
