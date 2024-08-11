@@ -1,4 +1,4 @@
-##Flask Website##
+#Flask Website
 ##Overview##
 Flask Website is a web application built with Flask that provides a user-friendly interface for managing files. The application supports file browsing, uploading, downloading, and viewing metadata. It offers a clean design with image previews.
 
@@ -9,7 +9,7 @@ Flask Website is a web application built with Flask that provides a user-friendl
 - File Metadata: Provides file details such as upload date and IP address of the uploader.
 - Folder Navigation: Browse through folders and view their contents.
 
-##Installation##
+##Installation
 Follow these steps to set up and run the application:
 
 1. Clone the Repository
@@ -36,18 +36,18 @@ python app.py
 
 Open your web browser and navigate to http://127.0.0.1:5000 to access the application.
 
-##Usage##
-##Home Page##
+##Usage
+###Home Page
 Navigate to the home page to access the main features of the application.
-##Downloads Page
+###Downloads Page
 - Browse through files and folders displayed in a gallery view.
 - Click on folder thumbnails to open and view the contents.
 - Use the "Details" button to view metadata such as upload date and IP address.
-##Upload Page##
+###Upload Page##
 - Click the "Select files from computer" button to choose a file.
 - The selected file will be displayed above the button.
 - Click "Upload" to save the file to the files directory.
-##File Metadata##
+###File Metadata##
 - The "Details" button next to each file shows a tooltip with the following information:
     - File Name
     - Upload Date (Placeholder, adjust as needed)
