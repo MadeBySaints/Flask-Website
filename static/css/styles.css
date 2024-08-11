@@ -1,0 +1,158 @@
+
+body {
+    background-color: #2e2e2e; /* Dark gray background */
+    color: #fff; /* Default text color for readability */
+    font-family: Arial, sans-serif; /* General font for the page */
+}
+
+.file-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between items */
+    justify-content: center;
+    padding: 20px; /* Add padding around the gallery */
+}
+
+.file-item {
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.folder-item {
+    background-color: #444;
+}
+
+.file-thumbnail {
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover; /* Ensure image covers thumbnail without distortion */
+}
+
+.file-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.file-name {
+    color: #fff;
+    font-size: 14px;
+    margin: 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-details {
+    position: relative;
+}
+
+.details-btn, .download-btn {
+    display: block;
+    margin: 5px auto;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from links */
+}
+
+.details-btn {
+    background-color: #17a2b8;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 200px;
+    z-index: 100;
+    white-space: nowrap; /* Prevents line breaks in tooltip */
+}
+
+.tooltip p {
+    margin: 0;
+}
+
+.tooltip.visible {
+    display: block; /* Ensure tooltip is visible when active */
+}
+
+@media (max-width: 600px) {
+    .file-gallery {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center;
+    }
+
+    .file-item {
+        width: 100%; /* Full width on small screens */
+        max-width: 300px; /* Limit the maximum width */
+    }
+}
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+    padding-top: 60px; /* Spacing from the top */
+}
+
+.modal-content {
+    background-color: #333;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* Limit max width */
+    position: relative;
+}
+
+.close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ddd;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

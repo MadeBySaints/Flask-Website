@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Upload Page</h1>
+<form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="file-input" onchange="updateFileName()">
+    <p id="file-name">No file selected</p>
+    <button type="submit">Upload</button>
+</form>
+
+<script>
+    function updateFileName() {
+        var fileInput = document.getElementById('file-input');
+        var fileName = document.getElementById('file-name');
+        if (fileInput.files.length > 0) {
+            fileName.textContent = 'Selected file: ' + fileInput.files[0].name;
+        } else {
+            fileName.textContent = 'No file selected';
+        }
+    }
+</script>
+{% endblock %}

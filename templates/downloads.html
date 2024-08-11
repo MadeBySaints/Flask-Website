@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Downloads Page</h1>
+<div class="file-gallery">
+    {% for file_info in files %}
+    <div class="file-item {% if file_info.is_folder %}folder-item{% endif %}">
+        {% if file_info.is_folder %}
+        <a href="{{ url_for('downloads', folder=(current_folder + '/' + file_info.name) if current_folder else file_info.name) }}">
+            <img src="{{ url_for('static', filename='images/folder_icon.png') }}" alt="Folder Icon" class="file-thumbnail">
+            <p class="file-name">{{ file_info.name }}</p>
+        </a>
+        {% else %}
+        <div class="file-details">
+            {% if file_info.name.endswith(('.png', '.jpg', '.jpeg', '.gif')) %}
+                <img src="{{ url_for('download_file', filename=file_info.name) }}" alt="Image Thumbnail" class="file-thumbnail">
+            {% else %}
+                <img src="{{ url_for('static', filename='images/file_icon.png') }}" alt="File Icon" class="file-icon">
+            {% endif %}
+            <p class="file-name">{{ file_info.name }}</p>
+            <a href="{{ url_for('download_file', filename=file_info.name) }}" class="btn download-btn">Download</a>
+            <a href="#" data-file="{{ file_info.name }}" class="btn details-btn">Details</a>
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Modal Structure -->
+<div id="fileMetadataModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>File Details</h2>
+        <p id="file-name"></p>
+        <p id="upload-date"></p>
+        <p id="ip-address"></p>
+        <button id="ok-button" class="btn">OK</button>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.details-btn').forEach(button => {
+        button.addEventListener('click', async function(event) {
+            event.preventDefault();
+            const fileName = this.getAttribute('data-file');
+            const modal = document.getElementById('fileMetadataModal');
+            const fileNameElem = document.getElementById('file-name');
+            const uploadDateElem = document.getElementById('upload-date');
+            const ipAddressElem = document.getElementById('ip-address');
+            
+            const response = await fetch(`/file_metadata/${fileName}`);
+            const data = await response.json();
+            
+            fileNameElem.textContent = 'File Name: ' + fileName;
+            uploadDateElem.textContent = 'Upload Date: ' + (data.upload_date || 'N/A');
+            ipAddressElem.textContent = 'IP Address: ' + (data.ip_address || 'N/A');
+            
+            modal.style.display = 'block';
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.modal-content') && !event.target.closest('.details-btn')) {
+                document.getElementById('fileMetadataModal').style.display = 'none';
+            }
+        });
+    });
+
+    // Get the modal
+    const modal = document.getElementById('fileMetadataModal');
+
+    // Get the <span> element that closes the modal
+    const closeBtn = document.querySelector('.modal .close');
+
+    // When the user clicks on <span> (x), close the modal
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    // When the user clicks on OK button, close the modal
+    document.getElementById('ok-button').onclick = function() {
+        modal.style.display = 'none';
+    }
+</script>
+{% endblock %}
