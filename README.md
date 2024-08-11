@@ -14,7 +14,7 @@ Follow these steps to set up and run the application:
 
 1. Clone the Repository
 
-git clone https://github.com/your-username/flask-file-manager.git
+git clone https://github.com/MadeBySaints/Flask-Website.git
 
 cd flask-file-manager
 
