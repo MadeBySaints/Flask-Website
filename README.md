@@ -1,27 +1,29 @@
 ## Flask Website File Manager
 ## Overview
-This is a file management web application built using Flask. It allows users to securely upload, download, and view files with a clean and modern user interface. The system supports user login, and includes features such as file metadata display and image previews for a smoother user experience.
+This is a file management web application built using Flask. It allows users to securely upload, download, and view files with a clean and modern user interface. The system supports user login and includes features such as file metadata display, image previews, and file management tools.
 
-## Features
-Login and Logout System
-Secure user authentication with role-based session handling and a logout button on every main page.
+## Login System
+Secure user authentication with session handling.
+Note: Only login functionality is implemented. Logout is not yet included.
 
 ## Home Page
-A beautifully designed landing page with navigation links to Upload,and Downlaods.
+A visually improved landing page with clean navigation links to Upload and Downloads sections.
 
-## Downloads Page
-Displays files and folders in a gallery-style view with:
+##  Downloads Page
+Displays files and folders in a card-style layout with:
 
 Click-to-download functionality
 
 "Details" button to view file metadata
 
+New: Rename and Delete buttons for file management
+
 ## Upload Page
-Simple file selection and upload interface.
+Clean and simple file selection and upload UI
 
-Shows selected filename before uploading
+Preview selected filename before upload
 
-Automatically adds uploaded file to the system's file directory
+Uploads are automatically added to the file system directory
 
 ## File Metadata
 View important details like:
@@ -32,33 +34,40 @@ Upload date
 
 IP address of the uploader
 
+## What's New / Enhancements
+Compared to the previous version of the Flask Website File Manager, the following improvements were added:
+
+Delete Functionality – Easily remove uploaded files
+
+Rename Functionality – Rename files directly from the downloads page
+
+Enhanced UI/UX – Improved styling across all pages for a modern and intuitive look
+
+Navigation Buttons – Consistent header navigation across all pages
+
+Login Page Added – Basic login system to access the dashboard (logout to be added)
+
 ## Installation
 Clone the Repository
 
-bash
 git clone https://github.com/MadeBySaints/Flask-Website.git
 cd Flask-Website
 Create a Virtual Environment
 
-bash
 python -m venv venv
 Activate the Virtual Environment
 
 On Windows:
 
-bash
 venv\Scripts\activate
 On macOS/Linux:
 
-bash
 source venv/bin/activate
 Install the Dependencies
 
-bash
 pip install -r requirements.txt
 Run the Application
 
-bash
 python app.py
 Then open your browser and go to:
 http://localhost:5000
@@ -67,6 +76,8 @@ Or access from another device via your IP address with port 5000.
 ## Usage
 Login
 Go to /login, enter credentials, and access your dashboard.
+
+## Note: The username is "admin" and the password is "adminpass".
 
 Home
 Navigate to other pages like Upload, and Download.
