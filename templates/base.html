@@ -6,12 +6,18 @@
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
     <title>{% block title %}My Flask App{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <nav>
-        <a href="{{ url_for('index') }}">Home</a>
-        <a href="{{ url_for('downloads') }}">Downloads</a>
-        <a href="{{ url_for('upload_file') }}">Upload</a>
+    <nav class="navbar">
+        <div class="navbar-brand">Simple Flask Website</div>
+        <ul class="navbar-links">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('downloads') }}">Downloads</a></li>
+        <li><a href="{{ url_for('upload_file') }}">Upload</a></li>
+        </ul>
+
     </nav>
     <main>
         {% block content %}{% endblock %}
