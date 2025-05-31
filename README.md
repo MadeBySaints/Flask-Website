@@ -1,13 +1,13 @@
 ## Flask Website File Manager
 ## Overview
-This is a file management web application built using Flask. It allows users to securely upload, download, and view files with a clean and modern user interface. The system supports user login, logout, and includes features such as file metadata display and image previews for a smoother user experience.
+This is a file management web application built using Flask. It allows users to securely upload, download, and view files with a clean and modern user interface. The system supports user login, and includes features such as file metadata display and image previews for a smoother user experience.
 
 ## Features
 Login and Logout System
 Secure user authentication with role-based session handling and a logout button on every main page.
 
 ## Home Page
-A beautifully designed landing page with navigation links to Upload, Downloads, and Profile.
+A beautifully designed landing page with navigation links to Upload,and Downlaods.
 
 ## Downloads Page
 Displays files and folders in a gallery-style view with:
@@ -31,18 +31,6 @@ File name
 Upload date
 
 IP address of the uploader
-
-Profile Page
-
-Displays user information such as name, email, and contact number
-
-Can be expanded for editing or adding profile pictures
-
-Responsive Design
-
-Works well on desktop and mobile
-
-Styled using HTML and CSS for a clean user experience
 
 ## Installation
 Clone the Repository
@@ -93,19 +81,13 @@ Login
 Go to /login, enter credentials, and access your dashboard.
 
 Home
-Navigate to other pages like Upload, Download, Profile, or click Logout.
+Navigate to other pages like Upload, and Download.
 
 Upload Page
 Choose and upload files. The interface shows the selected file name before upload.
 
 Downloads Page
 View all uploaded files in a gallery format. Download files or check their metadata.
-
-Profile Page
-See your personal information (optional editing feature can be added later).
-
-Logout
-Click the Logout link in the navigation to safely end your session.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
