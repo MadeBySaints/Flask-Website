@@ -151,7 +151,7 @@ def delete_file(filename):
         return jsonify({"error": "Failed to delete file"}), 500
 
 # Rename file route with extension fix
-@app.route('/rename_file/<old_filename>', methods=['POST'])
+@app.route('/rename_file/<old_filename>', methods=['PUT'])
 @login_required
 def rename_file(old_filename):
     data = request.get_json()
