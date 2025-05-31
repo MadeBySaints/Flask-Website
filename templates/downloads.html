@@ -282,7 +282,7 @@
 
             try {
                 const res = await fetch(`/rename_file/${encodeURIComponent(oldName)}`, {
-                    method: 'POST',
+                    method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ new_filename: newName }),
                 });
