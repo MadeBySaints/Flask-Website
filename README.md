@@ -1,58 +1,112 @@
-# Flask Website
+## Flask Website File Manager
 ## Overview
-Flask Website is a web application built with Flask that provides a user-friendly interface for managing files. The application supports file browsing, uploading, downloading, and viewing metadata. It offers a clean design with image previews.
+This is a file management web application built using Flask. It allows users to securely upload, download, and view files with a clean and modern user interface. The system supports user login, logout, and includes features such as file metadata display and image previews for a smoother user experience.
 
 ## Features
-- Home Page: Entry point of the application with navigation options.
-- Downloads Page: Displays files and folders in a gallery view with download and details options.
-- Upload Page: Allows users to upload files to the server.
-- File Metadata: Provides file details such as upload date and IP address of the uploader.
-- Folder Navigation: Browse through folders and view their contents.
+Login and Logout System
+Secure user authentication with role-based session handling and a logout button on every main page.
+
+## Home Page
+A beautifully designed landing page with navigation links to Upload, Downloads, and Profile.
+
+## Downloads Page
+Displays files and folders in a gallery-style view with:
+
+Click-to-download functionality
+
+"Details" button to view file metadata
+
+## Upload Page
+Simple file selection and upload interface.
+
+Shows selected filename before uploading
+
+Automatically adds uploaded file to the system's file directory
+
+## File Metadata
+View important details like:
+
+File name
+
+Upload date
+
+IP address of the uploader
+
+Profile Page
+
+Displays user information such as name, email, and contact number
+
+Can be expanded for editing or adding profile pictures
+
+Responsive Design
+
+Works well on desktop and mobile
+
+Styled using HTML and CSS for a clean user experience
 
 ## Installation
-Follow these steps to set up and run the application:
+Clone the Repository
 
-1. Clone the Repository
-
+bash
+Copy
+Edit
 git clone https://github.com/MadeBySaints/Flask-Website.git
+cd Flask-Website
+Create a Virtual Environment
 
-cd flask-file-manager
-
-2. Create a Virtual Environment
-
+bash
+Copy
+Edit
 python -m venv venv
+Activate the Virtual Environment
 
-3. Activate the Virtual Environment
+On Windows:
 
-On Windows: venv\Scripts\activate
-On macOS/Linux: source venv/bin/activate
-Install Dependencies
+bash
+Copy
+Edit
+venv\Scripts\activate
+On macOS/Linux:
 
+bash
+Copy
+Edit
+source venv/bin/activate
+Install the Dependencies
+
+bash
+Copy
+Edit
 pip install -r requirements.txt
+Run the Application
 
-5. Run the Application
-
+bash
+Copy
+Edit
 python app.py
-
-Open your web browser and navigate to http://localhost:5000 to access the application.
-Alternatively, on a different device, you can go to your IP address: port 5000
+Then open your browser and go to:
+http://localhost:5000
+Or access from another device via your IP address with port 5000.
 
 ## Usage
-### Home Page
-Navigate to the home page to access the main features of the application.
-### Downloads Page
-- Browse through files and folders displayed in a gallery view.
-- Click on folder thumbnails to open and view the contents.
-- Use the "Details" button to view metadata such as upload date and IP address.
-### Upload Page
-- Click the "Select files from computer" button to choose a file.
-- The selected file will be displayed above the button.
-- Click "Upload" to save the file to the files directory.
-### File Metadata
-- The "Details" button next to each file shows a tooltip with the following information:
-    - File Name
-    - Upload Date (Placeholder, adjust as needed)
-    - IP Address of Uploader (Placeholder, adjust as needed)
+Login
+Go to /login, enter credentials, and access your dashboard.
 
-License:
-This project is licensed under the MIT License. See the LICENSE file for details.
+Home
+Navigate to other pages like Upload, Download, Profile, or click Logout.
+
+Upload Page
+Choose and upload files. The interface shows the selected file name before upload.
+
+Downloads Page
+View all uploaded files in a gallery format. Download files or check their metadata.
+
+Profile Page
+See your personal information (optional editing feature can be added later).
+
+Logout
+Click the Logout link in the navigation to safely end your session.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
