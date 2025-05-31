@@ -36,41 +36,29 @@ IP address of the uploader
 Clone the Repository
 
 bash
-Copy
-Edit
 git clone https://github.com/MadeBySaints/Flask-Website.git
 cd Flask-Website
 Create a Virtual Environment
 
 bash
-Copy
-Edit
 python -m venv venv
 Activate the Virtual Environment
 
 On Windows:
 
 bash
-Copy
-Edit
 venv\Scripts\activate
 On macOS/Linux:
 
 bash
-Copy
-Edit
 source venv/bin/activate
 Install the Dependencies
 
 bash
-Copy
-Edit
 pip install -r requirements.txt
 Run the Application
 
 bash
-Copy
-Edit
 python app.py
 Then open your browser and go to:
 http://localhost:5000
