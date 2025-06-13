@@ -1,12 +1,77 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Upload Page</h1>
-<form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
-    <input type="file" name="file" id="file-input" onchange="updateFileName()">
-    <p id="file-name">No file selected</p>
-    <button type="submit">Upload</button>
-</form>
+<style>
+    .upload-container {
+        max-width: 400px;
+        margin: 80px auto;
+        padding: 30px;
+        background-color: #f8f9fa;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .upload-container h1 {
+        color: #2e7d32;
+        margin-bottom: 20px;
+    }
+
+    .custom-file-input {
+        display: inline-block;
+        padding: 10px;
+        border: 2px dashed #a5d6a7;
+        background-color: #e8f5e9;
+        color: #2e7d32;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .custom-file-input:hover {
+        background-color: #c8e6c9;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    #file-name {
+        font-size: 14px;
+        margin-top: 10px;
+        color: #555;
+        font-style: italic;
+    }
+
+    button[type="submit"] {
+        margin-top: 20px;
+        background-color: #2e7d32;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #1b5e20;
+    }
+</style>
+
+<div class="upload-container">
+    <h1>Upload a File</h1>
+    <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+        <label class="custom-file-input">
+            Choose File
+            <input type="file" name="file" id="file-input" onchange="updateFileName()">
+        </label>
+        <p id="file-name">No file selected</p>
+        <button type="submit">Upload</button>
+    </form>
+</div>
 
 <script>
     function updateFileName() {

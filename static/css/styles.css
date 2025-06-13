@@ -1,42 +1,83 @@
-
+/* Global */
 body {
-    background-color: #2e2e2e; /* Dark gray background */
-    color: #fff; /* Default text color for readability */
-    font-family: Arial, sans-serif; /* General font for the page */
+    background-color: #f0f4f8;
+    color: #2c3e50;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+/* Navbar */
+.navbar {
+    background-color: #ffffff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+    color: #1abc9c;
+}
+
+/* File Gallery */
 .file-gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Space between items */
+    gap: 20px;
     justify-content: center;
-    padding: 20px; /* Add padding around the gallery */
+    padding: 30px 10px;
 }
 
 .file-item {
-    border: 1px solid #444;
-    border-radius: 8px;
-    padding: 10px;
-    width: 150px;
+    border: 1px solid #dde1e7;
+    border-radius: 12px;
+    padding: 15px;
+    width: 160px;
     text-align: center;
-    background-color: #333;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
     position: relative;
-    overflow: hidden; /* Prevent content overflow */
+}
+
+.file-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 .folder-item {
-    background-color: #444;
+    background-color: #f8f9fa;
 }
 
 .file-thumbnail {
-    max-width: 100px;
-    max-height: 100px;
-    margin-bottom: 5px;
+    max-width: 90px;
+    max-height: 90px;
+    margin: 10px auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    object-fit: cover; /* Ensure image covers thumbnail without distortion */
+    object-fit: cover;
+    border-radius: 6px;
 }
 
 .file-icon {
@@ -45,69 +86,79 @@ body {
 }
 
 .file-name {
-    color: #fff;
+    color: #2c3e50;
     font-size: 14px;
-    margin: 5px 0;
+    margin: 10px 0 5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.file-details {
-    position: relative;
-}
-
-.details-btn, .download-btn {
-    display: block;
-    margin: 5px auto;
-    padding: 5px 10px;
-    color: #fff;
-    background-color: #007bff;
+/* Buttons */
+.details-btn,
+.download-btn,
+.btn {
+    display: inline-block;
+    margin: 6px auto;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    text-decoration: none; /* Remove underline from links */
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
 }
 
 .details-btn {
-    background-color: #17a2b8;
+    background-color: #1abc9c;
 }
 
+.details-btn:hover {
+    background-color: #16a085;
+}
+
+.download-btn,
+.btn {
+    background-color: #3498db;
+}
+
+.download-btn:hover,
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* Tooltip */
 .tooltip {
     display: none;
     position: absolute;
-    background-color: #333;
-    color: #fff;
+    background-color: #ffffff;
+    color: #333;
     padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
     max-width: 200px;
     z-index: 100;
-    white-space: nowrap; /* Prevents line breaks in tooltip */
+    white-space: nowrap;
+    border: 1px solid #ccc;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .tooltip p {
     margin: 0;
+    font-size: 13px;
+    line-height: 1.4;
 }
 
 .tooltip.visible {
-    display: block; /* Ensure tooltip is visible when active */
+    display: block;
 }
 
-@media (max-width: 600px) {
-    .file-gallery {
-        flex-direction: column; /* Stack items vertically on small screens */
-        align-items: center;
-    }
-
-    .file-item {
-        width: 100%; /* Full width on small screens */
-        max-width: 300px; /* Limit the maximum width */
-    }
-}
-/* Modal styles */
+/* Modal */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 100;
     left: 0;
@@ -115,23 +166,24 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
-    padding-top: 60px; /* Spacing from the top */
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
 }
 
 .modal-content {
-    background-color: #333;
-    margin: 5% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #444;
-    border-radius: 8px;
-    width: 80%; /* Could be more or less, depending on screen size */
-    max-width: 500px; /* Limit max width */
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 20px 25px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    width: 85%;
+    max-width: 500px;
     position: relative;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .close {
-    color: #fff;
+    color: #444;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -139,20 +191,31 @@ body {
 
 .close:hover,
 .close:focus {
-    color: #ddd;
+    color: #000;
     text-decoration: none;
     cursor: pointer;
 }
 
-.btn {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+/* Responsive Design */
+@media (max-width: 600px) {
+    .file-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.btn:hover {
-    background-color: #0056b3;
+    .file-item {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

@@ -1,58 +1,93 @@
-# Flask Website
+## Flask Website File Manager
 ## Overview
-Flask Website is a web application built with Flask that provides a user-friendly interface for managing files. The application supports file browsing, uploading, downloading, and viewing metadata. It offers a clean design with image previews.
+This is a file management web application built using Flask. It allows users to securely upload, download, and view files with a clean and modern user interface. The system supports user login and includes features such as file metadata display, image previews, and file management tools.
 
-## Features
-- Home Page: Entry point of the application with navigation options.
-- Downloads Page: Displays files and folders in a gallery view with download and details options.
-- Upload Page: Allows users to upload files to the server.
-- File Metadata: Provides file details such as upload date and IP address of the uploader.
-- Folder Navigation: Browse through folders and view their contents.
+## Login System
+Secure user authentication with session handling.
+Note: Only login functionality is implemented. Logout is not yet included.
+
+## Home Page
+A visually improved landing page with clean navigation links to Upload and Downloads sections.
+
+##  Downloads Page
+Displays files and folders in a card-style layout with:
+
+Click-to-download functionality
+
+"Details" button to view file metadata
+
+New: Rename and Delete buttons for file management
+
+## Upload Page
+Clean and simple file selection and upload UI
+
+Preview selected filename before upload
+
+Uploads are automatically added to the file system directory
+
+## File Metadata
+View important details like:
+
+File name
+
+Upload date
+
+IP address of the uploader
+
+## What's New / Enhancements
+Compared to the previous version of the Flask Website File Manager, the following improvements were added:
+
+Delete Functionality – Easily remove uploaded files
+
+Rename Functionality – Rename files directly from the downloads page
+
+Enhanced UI/UX – Improved styling across all pages for a modern and intuitive look
+
+Navigation Buttons – Consistent header navigation across all pages
+
+Login Page Added – Basic login system to access the dashboard (logout to be added)
 
 ## Installation
-Follow these steps to set up and run the application:
-
-1. Clone the Repository
+Clone the Repository
 
 git clone https://github.com/MadeBySaints/Flask-Website.git
-
-cd flask-file-manager
-
-2. Create a Virtual Environment
+cd Flask-Website
+Create a Virtual Environment
 
 python -m venv venv
+Activate the Virtual Environment
 
-3. Activate the Virtual Environment
+On Windows:
 
-On Windows: venv\Scripts\activate
-On macOS/Linux: source venv/bin/activate
-Install Dependencies
+venv\Scripts\activate
+On macOS/Linux:
+
+source venv/bin/activate
+Install the Dependencies
 
 pip install -r requirements.txt
-
-5. Run the Application
+Run the Application
 
 python app.py
-
-Open your web browser and navigate to http://localhost:5000 to access the application.
-Alternatively, on a different device, you can go to your IP address: port 5000
+Then open your browser and go to:
+http://localhost:5000
+Or access from another device via your IP address with port 5000.
 
 ## Usage
-### Home Page
-Navigate to the home page to access the main features of the application.
-### Downloads Page
-- Browse through files and folders displayed in a gallery view.
-- Click on folder thumbnails to open and view the contents.
-- Use the "Details" button to view metadata such as upload date and IP address.
-### Upload Page
-- Click the "Select files from computer" button to choose a file.
-- The selected file will be displayed above the button.
-- Click "Upload" to save the file to the files directory.
-### File Metadata
-- The "Details" button next to each file shows a tooltip with the following information:
-    - File Name
-    - Upload Date (Placeholder, adjust as needed)
-    - IP Address of Uploader (Placeholder, adjust as needed)
+Login
+Go to /login, enter credentials, and access your dashboard.
 
-License:
-This project is licensed under the MIT License. See the LICENSE file for details.
+## Note: The username is "admin" and the password is "adminpass".
+
+Home
+Navigate to other pages like Upload, and Download.
+
+Upload Page
+Choose and upload files. The interface shows the selected file name before upload.
+
+Downloads Page
+View all uploaded files in a gallery format. Download files or check their metadata.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
